@@ -1,0 +1,256 @@
+@import '~themes/vars';
+
+.form {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin: -160px 0 0 -160px;
+  width: 320px;
+  height: 320px;
+  padding: 36px;
+  box-shadow: 0 0 100px rgba(0 0 0 0.08);
+
+  button {
+    width: 100%;
+  }
+
+  p {
+    color: rgb(204 204 204);
+    text-align: center;
+    margin-top: 16px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.logo {
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 40px;
+    margin-right: 8px;
+  }
+
+  span {
+    vertical-align: text-bottom;
+    font-size: 16px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 700;
+    color: @primary-color;
+    .text-gradient();
+  }
+}
+
+.ant-spin-container
+.ant-spin-nested-loading {
+  height: 100%;
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.loginPage {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #DEF3F4;
+  z-index: 99;
+}
+
+.loginPage .container {
+  position: relative;
+  width: 240px;
+  height: 300px;
+  padding: 100px 40px 40px 40px;
+  box-sizing: content-box;
+}
+
+.loginPage .box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 90px 40px 40px 40px;
+  backface-visibility: hidden;
+  background: linear-gradient(230deg, rgba(53, 57, 74, 0) 0%, #000 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='rgba(53, 57, 74, 0)', endColorstr='rgb(0, 0, 0)', GradientType=1);
+  box-shadow: -15px 15px 15px rgba(0, 0, 0, 0.4);
+  transition: all 1s;
+}
+
+
+.loginPage .showBox {
+  transform: rotateY(0deg);
+}
+
+.loginPage .hiddenBox {
+  transform: rotateY(180deg);
+}
+
+.loginPage .loginBtn {
+  padding: 10px 50px;
+  border: 2px solid #4FA1D9;
+  border-radius: 50px;
+  background: transparent;
+  font-size: 11px;
+  color: #4FA1D9;
+  transition: all .2s;
+}
+
+.loginPage .bottom {
+  display: flex;
+  height: 42px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loginPage .registerBtn {
+  color: #D3D7F7;
+}
+
+.loginPage .registerBtn:hover {
+  color: #4FA1D9;
+  cursor: pointer;
+}
+
+.loginPage .loginBtn:hover {
+  color: white;
+  background: #4FA1D9;
+  cursor: pointer;
+}
+
+.loginPage .title {
+  height: 60px;
+  color: #D3D7F7;
+  font-size: 16px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.loginPage .footer {
+  position: absolute;
+  bottom: 20px;
+  left: 35px;
+  width: 250px;
+  color: #D3D7F7;
+  font-size: 10px;
+  margin-bottom: -10px;
+  margin-left: 70px;
+}
+
+/*覆盖antd的默认样式*/
+.loginPage input {
+  color: #61BFFF;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.loginPage .ant-input-group-addon {
+  background: transparent;
+  padding: 0;
+  border: none;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.loginPage .ant-input-group-addon .iconfont {
+  display: inline-block;
+  width: 30px;
+  transition: all .3s;
+  opacity: 0.6;
+}
+
+.loginPage .ant-form-item {
+  margin-bottom: 10px;
+}
+
+.loginPage .ant-form-explain {
+  position: absolute;
+  z-index: 99;
+  left: 110%;
+  top: 0;
+  height: 41px;
+}
+
+.login-notification {
+  background: transparent;
+  border: 1px solid #D3D7F7;
+  color: #D3D7F7;
+  width: 250px;
+  height: 80px;
+  float: right;
+  margin-right: 20px;
+}
+
+.login-notification .ant-notification-notice-message {
+  color: #D3D7F7;
+}
+
+.login-notification .ant-notification-notice-close {
+  color: #D3D7F7;
+}
+
+/*更改谷歌浏览器input背景*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  /*延迟背景颜色载入*/
+  -webkit-transition-delay: 99999s;
+  -webkit-transition: color 99999s ease-out, background-color 99999s ease-out;
+}
+
+
+.backgroundBox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  // backgroundImage: 'url(https://github.com/zhangZhiHao1996/image-store/blob/master/react-admin-master/bg5.jpg?raw=true)'
+  background-image: url(./bg1.jpg);
+  //url(https://github.com/zhangZhiHao1996/image-store/blob/master/react-admin-master/bg1.jpg?raw=true);
+  background-size: 100% 100%;
+  transition: all .5s;
+}
+.focus {
+  width: 20px;
+  opacity: 1
+}
+.loadingBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% -50%)
+}
+
+
+.loadingTitle {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -45px;
+  margin-top: -18px;
+  color: #000;
+  font-weight: 500;
+  font-size: 24px;
+}
+
