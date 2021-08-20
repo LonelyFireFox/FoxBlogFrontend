@@ -34,7 +34,7 @@ class RightMainPage extends React.Component {
           <nav className={`${styles['blog-nav']} ${styles.nav} ${styles['nav-justified']} ${styles['my-5']}`}>
             {previous && <a
               className={`${styles['nav-link-prev']} ${styles['nav-item']} ${styles['nav-link']} ${styles['rounded-left']}`}
-              href={`/home?${previous && previous.indexOf('?') !== -1 ? previous.substr(previous.indexOf('?') + 1) : ''}`} /*onClick={this.handleClickPrevious.bind(this,previous)}*/>Previous
+              href={`/home?${previous && previous.indexOf('?') !== -1 ? previous.substr(previous.indexOf('?') + 1) : ''}`} /*onClick={this.handleClickPrevious.bind(this,previous)}*/>上一页
               <svg
                 // className={`${styles['svg-inline--fa']} ${styles['fa-long-arrow-alt-left']} ${styles['fa-w-14']} ${styles['arrow-prev']}`}
                 className={styles['svg-leftarrow-set']}
@@ -47,7 +47,7 @@ class RightMainPage extends React.Component {
             }
             {next && <a
               className={`${styles['nav-link-next']} ${styles['nav-item']} ${styles['nav-link']} ${styles['rounded']} `}
-              href={`/home?${next && next.substr(next.indexOf('?') + 1)}`} /*onClick={this.handleClickNext.bind(this,next)}*/>Next
+              href={`/home?${next && next.substr(next.indexOf('?') + 1)}`} /*onClick={this.handleClickNext.bind(this,next)}*/>下一页
               <svg
                 // className={`${styles['svg-inline--fa']} ${styles['fa-long-arrow-alt-right']} ${styles['fa-w-14']} ${styles['arrow-next']}`}
                 className={styles['svg-rightarrow-set']}

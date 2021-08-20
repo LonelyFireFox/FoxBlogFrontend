@@ -52,9 +52,10 @@ class PrimaryLayout extends PureComponent {
     const user = store.get('user') || {}
     const permissions = store.get('permissions') || {}
     const routeList = store.get('routeList') || []
+    console.log("routeList ===>> " , routeList);
     const { isMobile } = this.state
     const { onCollapseChange } = this
-    
+
 
     // Localized route name.
 
@@ -76,9 +77,9 @@ class PrimaryLayout extends PureComponent {
     )
 
     // Query whether you have permission to enter this page
-    const hasPermission = currentRoute
-      ? permissions.visit.includes(currentRoute.id)
-      : false
+    // const hasPermission = currentRoute
+    //   ? permissions.visit.includes(currentRoute.id)
+    //   : false
 
     // MenuParentId is equal to -1 is not a available menu.
     const menus = newRouteList.filter(_ => _.menuParentId !== '-1')
@@ -88,8 +89,8 @@ class PrimaryLayout extends PureComponent {
       collapsed,
       notifications,
       onCollapseChange,
-      avatar: user.avatar,
-      username: user.username,
+      // avatar: user.avatar,
+      // username: user.username,
       fixed: config.fixedHeader,
       onAllNotificationsRead() {
         dispatch({ type: 'app/allNotificationsRead' })
@@ -139,12 +140,13 @@ class PrimaryLayout extends PureComponent {
             style={{ paddingTop: config.fixedHeader ? 72 : 0 }}
             id="primaryLayout"
           >
-            <Header {...headerProps} />
+            {/*<Header {...headerProps} />*/}
 
             <Content className={styles.content}>
               {/*<Bread routeList={newRouteList} />*/}
               <LeftPersonalIntro {...this.props}/>
-              {hasPermission ? children : <Error /> }
+              {children}
+              {/*{hasPermission ? children : <Error /> }*/}
               {/*// todo 后续看这里能不能直接修改children的style属性,解决布局左偏问题*/}
             </Content>
             <BackTop />

@@ -1,7 +1,7 @@
 module.exports = {
   // siteName: '分析系统',
   siteName: 'LonelyFireFox Blog',
-  copyright: 'LonelyFireFox Blog  ©2020 LonelyFireFox',
+  copyright: 'LonelyFireFox Blog  ©2021 LonelyFireFox',
   logoPath: '/MyLogo2.jpg',
   apiPrefix: '/api/v1',
   address: 'http://localhost:8000',

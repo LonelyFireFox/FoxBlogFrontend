@@ -8,6 +8,7 @@ import { queryLayout, pathMatchRegexp } from 'utils'
 import { CANCEL_REQUEST_MESSAGE } from 'utils/constant'
 import api from 'api'
 import config from 'config'
+import {database} from '../mock/data_tmp'
 
 const { queryRouteList, logoutUser, queryUserInfo, getTagList, getCategoryList } = api
 
@@ -62,9 +63,9 @@ export default {
   },
   subscriptions: {
     setup({ dispatch }) {
-      dispatch({ type: 'query' })
+      // dispatch({ type: 'query' })
+      dispatch({ type: 'init' })
 
-      // TODO 把这块迁到app的setup中去获取，并把数据保存到model中？是否能全局使用，并给到Right组件去使用
       dispatch({
         type: 'getCategoryList',
       })
@@ -105,11 +106,16 @@ export default {
     },
   },
   effects: {
+    *init({payload},{call,put,select}){
+      const routeList = database
+      store.set('routeList', routeList)
+    },
+
     *query({ payload }, { call, put, select }) {
       // store isInit to prevent query trigger by refresh
       const isInit = store.get('isInit')
       if (isInit) {
-        // alert(1)
+        alert(1)
         goDashboard()
         return
       }
@@ -121,7 +127,7 @@ export default {
       const { success, user } = yield call(queryUserInfo, payload)
       if (success && user) {
         //已经登陆的
-        // alert(2)
+        alert(2)
         const { list } = yield call(queryRouteList)
         const { permissions } = user
         let routeList = list
